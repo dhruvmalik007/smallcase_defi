@@ -1,3 +1,2 @@
 @selfxyz/contracts/=./node_modules/@selfxyz/contracts/
 @openzeppelin/contracts=lib/
-forge-std/=lib/forge-std/src/
