@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getStrategy, strategies } from "@/data/strategies";
-import { StrategyDetailWithRealData } from "@/components/strategy/StrategyDetailWithRealData";
+import { StrategyDetail } from "@/components/strategy/StrategyDetail";
 
 export function generateStaticParams() {
   return strategies.map((s) => ({ slug: s.slug }));
@@ -18,7 +18,7 @@ export default function StrategyPage({ params }: { params: { slug: string } }) {
   if (!strategy) return notFound();
   return (
     <section className="container py-10 md:py-12">
-      <StrategyDetailWithRealData strategy={strategy} />
+      <StrategyDetail strategy={strategy} />
     </section>
   );
 }
