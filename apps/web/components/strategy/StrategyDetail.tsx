@@ -13,7 +13,7 @@ function HoldingsBar({ weights }: { weights: { label: string; weight: number }[]
       {weights.map((w) => (
         <div
           key={w.label}
-          className="h-full bg-gradient-to-r from-primary/70 to-primary/50"
+          className="h-full bg-gradient-to-r from-blue-500/70 to-cyan-400/70"
           style={{ width: `${(w.weight / total) * 100}%` }}
           title={`${w.label}: ${w.weight.toFixed(1)}%`}
         />
@@ -278,7 +278,7 @@ export function StrategyDetail({ strategy }: { strategy: Strategy }) {
             {strategy.backtest.monthlyReturns1Y.map((m, idx) => (
               <div key={idx} className="flex flex-col items-center gap-1">
                 <div
-                  className={`w-3 rounded-sm ${m >= 0 ? "bg-primary/80" : "bg-destructive/80"}`}
+                  className={`w-3 rounded-sm ${m >= 0 ? "bg-green-500/80" : "bg-red-500/80"}`}
                   style={{ height: `${Math.min(100, Math.abs(m)) + 10}px` }}
                   title={`${m.toFixed(1)}%`}
                 />
